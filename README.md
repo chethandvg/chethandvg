@@ -40,15 +40,35 @@
 
 ---
 
+<!-- Tech icons via skillicons.dev -->
 ## 🛠️ Tech Stack & Tools
 
-<!-- Tech icons via skillicons.dev -->
+<!-- Row 1: Languages -->
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=java,python,javascript,typescript,react,nodejs,express,spring&perline=8&theme=dark" />
-  <br/>
-  <img src="https://skillicons.dev/icons?i=mysql,postgres,mongodb,redis,docker,kubernetes,aws,gcp&perline=8&theme=dark" />
-  <br/>
-  <img src="https://skillicons.dev/icons?i=git,github,vscode,linux,tensorflow,pytorch,kafka,jenkins&perline=8&theme=dark" />
+  <img src="https://skillicons.dev/icons?i=cs,python,javascript,html,css,sql&perline=8&theme=dark" />
+</div>
+
+<!-- Row 2: Frameworks & Platforms -->
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=dotnet,blazor,azure,git,github,vscode,visualstudio&perline=8&theme=dark" />
+</div>
+
+<!-- Row 3: Databases & Tools -->
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=mysql,postgres,docker,githubactions,jira&perline=8&theme=dark" />
+</div>
+
+<!-- Row 4: Badges for tools not in skillicons -->
+<div align="center">
+  <img src="https://img.shields.io/badge/.NET_MVC-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" />
+  <img src="https://img.shields.io/badge/MAUI_Blazor-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" />
+  <img src="https://img.shields.io/badge/Entity_Framework-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" />
+  <img src="https://img.shields.io/badge/Azure_Databricks-FF3621?style=for-the-badge&logo=databricks&logoColor=white" />
+  <img src="https://img.shields.io/badge/Azure_DevOps-0078D7?style=for-the-badge&logo=azuredevops&logoColor=white" />
+  <img src="https://img.shields.io/badge/PySpark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white" />
+  <img src="https://img.shields.io/badge/Contentful-2478CC?style=for-the-badge&logo=contentful&logoColor=white" />
+  <img src="https://img.shields.io/badge/Commercetools-36ade2?style=for-the-badge&logo=commercetools&logoColor=white" />
+  <img src="https://img.shields.io/badge/Algolia-5468FF?style=for-the-badge&logo=algolia&logoColor=white" />
 </div>
 
 ---
@@ -161,8 +181,6 @@ Other        █░░░░░░░░░░░░░░░░░░░░   0
 
 ---
 
-
----
 
 ## 🤝 Let's Connect!
 
