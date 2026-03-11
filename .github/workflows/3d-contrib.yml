@@ -1,0 +1,34 @@
+name: Generate 3D Contribution Graph
+
+on:
+  schedule:
+    - cron: "0 2 * * *"   # daily at 2am UTC
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate 3D profile
+        uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: chethandvg
+          SETTING_JSON: |
+            {
+              "username": "chethandvg",
+              "type": "NORMAL",
+              "backgroundColor1": "#0d1117",
+              "backgroundColor2": "#1a1b27",
+              "foregroundColor": "#6C63FF"
+            }
+
+      - name: Commit and push
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: "profile-3d-contrib"
+          message: "Update 3D contribution graph"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
