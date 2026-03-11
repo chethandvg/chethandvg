@@ -126,10 +126,9 @@ Experience:
 ```
 
 ---
-
+<!--
 ## 🎯 Featured Projects
 
-<div align="center">
 
 <div align="center">
 
@@ -137,8 +136,7 @@ Experience:
 [![Tenant Management](https://github-readme-stats.vercel.app/api/pin/?username=chethandvg&repo=tenantManagement&theme=tokyonight&border_radius=12)](https://github.com/chethandvg/tenantManagement)
 
 </div>
-
-</div>
+-->
 
 > 💡 *More pinned repositories below — check them out!*
 
