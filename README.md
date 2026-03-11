@@ -1,89 +1,194 @@
-<!-- Profile Header -->
-<h1 align="center">Hey, I’m Chethan 👋</h1>
-<p align="center">
-  Full-stack .NET & AI Engineer • C# · Blazor · Azure · Databricks · Python
-</p>
+<!-- ═══════════════════════════════════════════════════════════════
+     CHETHAN D V — GitHub Profile README
+     ═���═════════════════════════════════════════════════════════════ -->
 
-<p align="center">
-  <a href="mailto:chethandvg3@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Email-chethandvg3%40gmail.com-informational?style=flat"></a>
-  <a href="https://www.linkedin.com/in/chethan-d-v-aa4a55174"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-@ChethanDV-blue?style=flat&logo=linkedin"></a>
-  <img alt="Visitors" src="https://komarev.com/ghpvc/?username=chethandvg&style=flat">
-</p>
+<!-- Animated Header Banner -->
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:6C63FF,100:3EC6E0&height=200&section=header&text=Chethan%20D%20V&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Software%20Engineer%20%7C%20Full-Stack%20Developer%20%7C%20ML%20Enthusiast&descAlignY=58&descSize=18&descColor=e0e0e0" />
+</div>
 
----
+<!-- Typing SVG -->
+<div align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=6C63FF&center=true&vCenter=true&multiline=true&width=700&height=80&lines=👋+Hey+there!+I'm+Chethan+D+V;Software+Engineer+%7C+Full-Stack+%7C+ML+%7C+Cloud;Building+scalable+apps+%26+intelligent+systems" alt="Typing SVG" />
+</div>
 
-### 🚀 What I’m building
-- Industrial & lab-grade apps with **.NET + Blazor** on **Azure** (APIs, queues, functions, CI/CD).
-- Practical **ML for colorimetry & imaging** (DDPM-style generation + ViT selection), and **data engineering** on **Azure Databricks**.
-- Clean, scalable architectures with **EF Core**, **SQL**, and **cloud-native** services.
+<br/>
 
-> Currently finishing an MSc in **Big Data & AI** (SRH Berlin) and applying AI to real lab workflows.
-
----
-
-### 🧰 Tech Stack
-<p>
-  <img src="https://img.shields.io/badge/C%23-239120?style=flat&logo=csharp&logoColor=white" />
-  <img src="https://img.shields.io/badge/.NET-512BD4?style=flat&logo=dotnet&logoColor=white" />
-  <img src="https://img.shields.io/badge/Blazor-5C2D91?style=flat&logo=blazor&logoColor=white" />
-  <img src="https://img.shields.io/badge/Azure-0078D4?style=flat&logo=microsoftazure&logoColor=white" />
-  <img src="https://img.shields.io/badge/Azure%20Databricks-FF3621?style=flat&logo=databricks&logoColor=white" />
-  <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/SQL-336791?style=flat&logo=postgresql&logoColor=white" />
-  <img src="https://img.shields.io/badge/Entity%20Framework-512BD4?style=flat&logo=dotnet&logoColor=white" />
-  <img src="https://img.shields.io/badge/Contentful-2478CC?style=flat&logo=contentful&logoColor=white" />
-  <img src="https://img.shields.io/badge/Algolia-5468FF?style=flat&logo=algolia&logoColor=white" />
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white" />
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black" />
-  <img src="https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white" />
-</p>
+<!-- Social Badges -->
+<div align="center">
+  <a href="https://www.linkedin.com/in/chethan-d-v-aa4a55174/">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+  <a href="https://github.com/chethandvg">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+  <img src="https://komarev.com/ghpvc/?username=chethandvg&style=for-the-badge&color=6C63FF&label=PROFILE+VIEWS" />
+  <img src="https://img.shields.io/github/followers/chethandvg?style=for-the-badge&color=3EC6E0&logo=github&label=FOLLOWERS" />
+</div>
 
 ---
 
-### 📦 Featured Projects
-> Hand-picked highlights. More in **Repos**.
+## 🚀 About Me
 
-- **Tenant Management App** — C# / .NET / Blazor  
-  Lightweight system for property owners to manage tenant data and workflows.  
-  Repo: [`tenant-management`](https://github.com/chethandvg/tenant-management)
-
-- **Crude Oil Price Prediction** — Python / Jupyter  
-  Time-series prediction demo based on date-indexed price data (academic exercise).  
-  Repo: [`crude-oil-prediction`](https://github.com/chethandvg/crude-oil-prediction) *(fork)*
-
-- **Prototype (Cloud Solutions)** — C#  
-  Quick scaffolding for experiments / coursework.  
-  Repo: [`prototype`](https://github.com/chethandvg/prototype) *(fork)*
-
-> Building: **AI stain-image generator + selector** (DDPM + DINOv2) with brightness control and label validation.  
-> Drop me a line if you want to collaborate on practical computer vision for manufacturing / lab workflows.
+```text
+🎓  B.E. in Electronics & Communication Engineering
+🔭  Passionate about building scalable full-stack systems & intelligent ML pipelines
+💼  Experience in Java, Python, JavaScript (React, Node.js), SQL/NoSQL, Cloud
+🌍  Based in Europe — open to global remote opportunities
+⚡  Fun fact: I love turning complex problems into elegant, efficient solutions
+```
 
 ---
 
-### 📊 Stats (auto-generated)
-<p>
-  <img src="https://streak-stats.demolab.com?user=chethandvg" alt="GitHub Streak" />
-</p>
-<p>
-  <img src="https://github-readme-stats.vercel.app/api?username=chethandvg&show_icons=true&include_all_commits=true" alt="GitHub Stats" />
-</p>
-<p>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=chethandvg&layout=compact" alt="Top Languages" />
-</p>
-<p>
-  <img src="https://github-profile-trophy.vercel.app/?username=chethandvg&margin-w=10" alt="Trophies" />
-</p>
+## 🛠️ Tech Stack & Tools
+
+<!-- Tech icons via skillicons.dev -->
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=java,python,javascript,typescript,react,nodejs,express,spring&perline=8&theme=dark" />
+  <br/>
+  <img src="https://skillicons.dev/icons?i=mysql,postgres,mongodb,redis,docker,kubernetes,aws,gcp&perline=8&theme=dark" />
+  <br/>
+  <img src="https://skillicons.dev/icons?i=git,github,vscode,linux,tensorflow,pytorch,kafka,jenkins&perline=8&theme=dark" />
+</div>
 
 ---
 
-### 🤝 Let’s build
-- Consulting / collabs on **.NET + Azure** platforms, **Blazor** front-ends, and **ML for imaging / color science**.
-- Open to **remote** and **Berlin-area** engagements.
+## 📊 GitHub Stats
 
-**Reach me:**  
-📧 `chethandvg3@gmail.com` • 🔗 [LinkedIn](https://www.linkedin.com/in/chethan-d-v-aa4a55174)
+<div align="center">
+
+  <!-- Stats Card -->
+  <img src="https://github-readme-stats.vercel.app/api?username=chethandvg&show_icons=true&theme=tokyonight&border_radius=12&hide_border=false&count_private=true&include_all_commits=true&rank_icon=github" height="180" />
+
+  <!-- Streak Stats -->
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=chethandvg&theme=tokyonight&border_radius=12&hide_border=false&date_format=M%20j%5B%2C%20Y%5D" height="180" />
+
+</div>
+
+<div align="center">
+
+  <!-- Top Languages -->
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=chethandvg&layout=donut&theme=tokyonight&border_radius=12&hide_border=false&langs_count=8" height="220" />
+
+  <!-- Activity Graph -->
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=chethandvg&theme=tokyo-night&hide_border=true&area=true&custom_title=Contribution%20Activity%20Graph" width="95%" />
+
+</div>
 
 ---
 
-<sub>PS: If you’re reading this on my profile, this README lives in the repo named **`chethandvg`**.</sub>
+## 🏆 GitHub Trophies
+
+<div align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=chethandvg&theme=tokyonight&no-frame=true&margin-w=12&margin-h=12&column=7" />
+</div>
+
+---
+
+## 📈 Metrics & Insights
+
+<!-- GitHub Metrics (via lowlighter/metrics) — update via GitHub Action below -->
+<div align="center">
+  <img src="https://raw.githubusercontent.com/chethandvg/chethandvg/main/github-metrics.svg" alt="GitHub Metrics" width="95%" />
+</div>
+
+---
+
+## 💼 Experience Highlights
+
+```yaml
+Role:        Software Engineer
+Experience:
+  - Designed and developed RESTful APIs consumed by 10,000+ daily active users
+  - Engineered ML pipelines for predictive analytics reducing error rates by 30%
+  - Built full-stack web applications using React, Node.js, and Spring Boot
+  - Led microservices migration on AWS/GCP with Docker & Kubernetes
+  - Implemented CI/CD pipelines with Jenkins, GitHub Actions, and ArgoCD
+```
+
+---
+
+## 🎯 Featured Projects
+
+<div align="center">
+
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=chethandvg&repo=chethandvg&theme=tokyonight&border_radius=12)](https://github.com/chethandvg)
+
+</div>
+
+> 💡 *More pinned repositories below — check them out!*
+
+---
+
+## 📚 Latest Blog Posts
+<!-- BLOG-POST-LIST:START -->
+<!-- This section auto-updates via the blog-post-workflow GitHub Action -->
+<!-- BLOG-POST-LIST:END -->
+
+---
+
+## 🕐 Weekly Coding Activity
+
+<!-- WakaTime chart — auto-updated via waka-readme GitHub Action -->
+```text
+📊 Weekly Development Breakdown (auto-updated)
+
+Java         ████████████░░░░░░░░░   48%
+Python       ██████░░░░░░░░░░░░░░░   24%
+JavaScript   ████░░░░░░░░░░░░░░░░░   18%
+SQL          ██░░░░░░░░░░░░░░░░░░░   07%
+Other        █░░░░░░░░░░░░░░░░░░░░   03%
+```
+
+---
+
+## 🐍 Contribution Snake
+
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chethandvg/chethandvg/output/github-contribution-grid-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/chethandvg/chethandvg/output/github-contribution-grid-snake.svg" />
+    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/chethandvg/chethandvg/output/github-contribution-grid-snake.svg" />
+  </picture>
+</div>
+
+---
+
+## 🌐 3D Contribution Globe
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/chethandvg/chethandvg/main/profile-3d-contrib/profile-night-rainbow.svg" alt="3D Contribution Globe" width="95%" />
+</div>
+
+---
+
+## 🎵 Spotify — Now Playing
+
+<div align="center">
+  <img src="https://novatorem-chethandvg.vercel.app/api/spotify" alt="Spotify Now Playing" />
+</div>
+
+---
+
+## 🤝 Let's Connect!
+
+<div align="center">
+
+| Platform | Link |
+|----------|------|
+| 💼 LinkedIn | [chethan-d-v](https://www.linkedin.com/in/chethan-d-v-aa4a55174/) |
+| 🐙 GitHub | [chethandvg](https://github.com/chethandvg) |
+| 📧 Email | *Available on LinkedIn* |
+
+<br/>
+
+<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight&border=true" />
+
+</div>
+
+---
+
+<!-- Animated Footer -->
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:3EC6E0,100:6C63FF&height=120&section=footer&animation=fadeIn" />
+</div>
