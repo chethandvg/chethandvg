@@ -8,7 +8,7 @@
 </div>
 
 <!-- Typing SVG -->
-<div align="center">
+<<div align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=6C63FF&center=true&vCenter=true&width=700&height=60&lines=👋+Hey+there!+I'm+Chethan+D+V;Software+Engineer+%7C+Full-Stack+Developer;C%23+%7C+.NET+%7C+Blazor+%7C+Python+%7C+Azure" alt="Typing SVG" />
 </div>
 
