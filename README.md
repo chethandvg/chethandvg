@@ -151,15 +151,17 @@ Experience:
 
 ## 🕐 Weekly Coding Activity
 
-<!-- WakaTime chart — auto-updated via waka-readme GitHub Action -->
 ```text
-📊 Weekly Development Breakdown (auto-updated)
+💻 Weekly Development Breakdown
 
-C#           ████████████████░░░░░   60%
-Blazor       ██████░░░░░░░░░░░░░░░   30%
-Python       ████░░░░░░░░░░░░░░░░░   10%
-SQL          ██░░░░░░░░░░░░░░░░░░░   07%
-Other        █░░░░░░░░░░░░░░░░░░░░   03%
+C#           ████████████████░░░░░░░░░   46 %
+Blazor       ████████░░░░░░░░░░░░░░░░░   24 %
+Python       █████░░░░░░░░░░░░░░░░░░░░   14 %
+JavaScript   ███░░░░░░░░░░░░░░░░░░░░░░    8 %
+SQL          ██░░░░░░░░░░░░░░░░░░░░░░░    4 %
+HTML/CSS     █░░░░░░░░░░░░░░░░░░░░░░░░    2 %
+Azure        █░░░░░░░░░░░░░░░░░░░░░░░░    1 %
+Other        █░░░░░░░░░░░░░░░░░░░░░░░░    1 %
 ```
 
 ---
