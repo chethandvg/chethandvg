@@ -1,6 +1,6 @@
 <!-- ═══════════════════════════════════════════════════════════════
      CHETHAN D V — GitHub Profile README
-     ═���═════════════════════════════════════════════════════════════ -->
+     ═   ═════════════════════════════════════════════════════════════ -->
 
 <!-- Animated Header Banner -->
 <div align="center">
@@ -31,9 +31,9 @@
 ## 🚀 About Me
 
 ```text
-🎓  B.E. in Electronics & Communication Engineering
+🎓  M.Sc in Computer science, focused on Big Data and Artificial Intelligence
 🔭  Passionate about building scalable full-stack systems & intelligent ML pipelines
-💼  Experience in Java, Python, JavaScript (React, Node.js), SQL/NoSQL, Cloud
+💼  Experience in C#, Blazor, MAUI, Python, JavaScript , SQL, Azure
 🌍  Based in Europe — open to global remote opportunities
 ⚡  Fun fact: I love turning complex problems into elegant, efficient solutions
 ```
@@ -99,11 +99,10 @@
 ```yaml
 Role:        Software Engineer
 Experience:
-  - Designed and developed RESTful APIs consumed by 10,000+ daily active users
-  - Engineered ML pipelines for predictive analytics reducing error rates by 30%
-  - Built full-stack web applications using React, Node.js, and Spring Boot
-  - Led microservices migration on AWS/GCP with Docker & Kubernetes
-  - Implemented CI/CD pipelines with Jenkins, GitHub Actions, and ArgoCD
+  - Built full-stack web applications using C#, .NET and Blazor
+  - Designed and developed RESTful APIs consumed daily active users
+  - Engineered ML pipelines for predictive analytics reducing error rates
+  - Implemented CI/CD pipelines with GitHub Actions and Azure Devops
 ```
 
 ---
@@ -133,9 +132,9 @@ Experience:
 ```text
 📊 Weekly Development Breakdown (auto-updated)
 
-Java         ████████████░░░░░░░░░   48%
-Python       ██████░░░░░░░░░░░░░░░   24%
-JavaScript   ████░░░░░░░░░░░░░░░░░   18%
+C#           ████████████████░░░░░   60%
+Blazor       ██████░░░░░░░░░░░░░░░   30%
+Python       ████░░░░░░░░░░░░░░░░░   10%
 SQL          ██░░░░░░░░░░░░░░░░░░░   07%
 Other        █░░░░░░░░░░░░░░░░░░░░   03%
 ```
@@ -162,11 +161,6 @@ Other        █░░░░░░░░░░░░░░░░░░░░   0
 
 ---
 
-## 🎵 Spotify — Now Playing
-
-<div align="center">
-  <img src="https://novatorem-chethandvg.vercel.app/api/spotify" alt="Spotify Now Playing" />
-</div>
 
 ---
 
@@ -178,7 +172,7 @@ Other        █░░░░░░░░░░░░░░░░░░░░   0
 |----------|------|
 | 💼 LinkedIn | [chethan-d-v](https://www.linkedin.com/in/chethan-d-v-aa4a55174/) |
 | 🐙 GitHub | [chethandvg](https://github.com/chethandvg) |
-| 📧 Email | *Available on LinkedIn* |
+| 📧 Email | chethandvg3@gmail.com |
 
 <br/>
 
