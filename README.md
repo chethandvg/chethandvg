@@ -80,7 +80,7 @@
 ## 🏆 GitHub Trophies
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=chethandvg&theme=tokyonight&no-frame=true&margin-w=12&margin-h=12&column=7" />
+  <img src="https://github-profile-trophy.vercel.app/?username=chethandvg&theme=tokyonight&no-frame=true&margin-w=12&margin-h=12&column=6&row=1" />
 </div>
 
 ---
