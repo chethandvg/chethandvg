@@ -131,7 +131,12 @@ Experience:
 
 <div align="center">
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=chethandvg&repo=chethandvg&theme=tokyonight&border_radius=12)](https://github.com/chethandvg)
+<div align="center">
+
+[![Krutaka](https://github-readme-stats.vercel.app/api/pin/?username=chethandvg&repo=krutaka&theme=tokyonight&border_radius=12)](https://github.com/chethandvg/krutaka)
+[![Tenant Management](https://github-readme-stats.vercel.app/api/pin/?username=chethandvg&repo=tenantManagement&theme=tokyonight&border_radius=12)](https://github.com/chethandvg/tenantManagement)
+
+</div>
 
 </div>
 
