@@ -2,20 +2,18 @@ name: Generate 3D Contribution Graph
 
 on:
   schedule:
-    - cron: "0 2 * * *"   # daily at 2am UTC
+    - cron: "0 2 * * *"
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - uses: actions/checkout@v4
 
-      - name: Write 3D contrib settings
+      - name: Write settings file
         run: |
-          cat > profile-3d-contrib/settings.json <<'JSON'
+          cat > /tmp/settings.json <<'EOF'
           {
             "username": "chethandvg",
             "type": "NORMAL",
@@ -23,14 +21,14 @@ jobs:
             "backgroundColor2": "#1a1b27",
             "foregroundColor": "#6C63FF"
           }
-          JSON
-          
+          EOF
+
       - name: Generate 3D profile
         uses: yoshi389111/github-profile-3d-contrib@0.7.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: chethandvg
-          SETTING_JSON: profile-3d-contrib/settings.json
+          SETTING_JSON: /tmp/settings.json
 
       - name: Commit and push
         uses: EndBug/add-and-commit@v9
