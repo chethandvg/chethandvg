@@ -181,7 +181,7 @@ Other        █░░░░░░░░░░░░░░░░░░░░░�
 ## 🌐 3D Contribution Globe
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/chethandvg/chethandvg/main/profile-3d-contrib/profile-night-rainbow.svg" alt="3D Contribution Globe" width="95%" />
+  <img src="https://raw.githubusercontent.com/chethandvg/chethandvg/main/profile-3d-contrib/profile-customize.svg" alt="3D Contribution Globe" width="95%" />
 </div>
 
 ---
