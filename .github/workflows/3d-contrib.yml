@@ -13,12 +13,24 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Write 3D contrib settings
+        run: |
+          cat > profile-3d-settings.json <<'JSON'
+          {
+            "username": "chethandvg",
+            "type": "NORMAL",
+            "backgroundColor1": "#0d1117",
+            "backgroundColor2": "#1a1b27",
+            "foregroundColor": "#6C63FF"
+          }
+          JSON
+          
       - name: Generate 3D profile
         uses: yoshi389111/github-profile-3d-contrib@0.7.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: chethandvg
-          SETTING_JSON: profile-3d-contrib/settings.json
+          SETTING_JSON: profile-3d-settings.json
 
       - name: Commit and push
         uses: EndBug/add-and-commit@v9
