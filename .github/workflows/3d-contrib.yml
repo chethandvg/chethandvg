@@ -2,7 +2,7 @@ name: Generate 3D Contribution Graph
 
 on:
   schedule:
-    - cron: "0 2 * * *"
+    - cron: "0 2 * * *"   # daily at 2am UTC
   workflow_dispatch:
 
 jobs:
@@ -11,9 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Write settings file
+      - name: Write settings file into workspace
         run: |
-          cat > /tmp/settings.json <<'EOF'
+          mkdir -p conf
+          cat > conf/settings.json << 'EOF'
           {
             "username": "chethandvg",
             "type": "NORMAL",
@@ -28,7 +29,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: chethandvg
-          SETTING_JSON: /tmp/settings.json
+          SETTING_JSON: conf/settings.json
 
       - name: Commit and push
         uses: EndBug/add-and-commit@v9
