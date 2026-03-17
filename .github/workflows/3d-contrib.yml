@@ -51,7 +51,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: chethandvg
-          # SETTING_JSON: conf/settings.json
+          SETTING_JSON: conf/settings.json
 
       - name: Commit and push
         uses: EndBug/add-and-commit@v9
