@@ -100,7 +100,14 @@
 ## 🏆 GitHub Trophies
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=chethandvg&theme=tokyonight&no-frame=true&margin-w=12&margin-h=12&column=6&row=1" />
+  <!-- Option A -->
+<img src="https://github-profile-trophy-liard-delta.vercel.app/?username=chethandvg&theme=tokyonight&no-frame=true&margin-w=12&margin-h=12&column=6&row=1" />
+
+<!-- Option B -->
+<img src="https://trophy.ryglcloud.net/?username=chethandvg&theme=tokyonight&no-frame=true&margin-w=12&margin-h=12&column=6&row=1" />
+
+<!-- Option C -->
+<img src="https://github-profile-trophy-tawny.vercel.app/?username=chethandvg&theme=tokyonight&no-frame=true&margin-w=12&margin-h=12&column=6&row=1" />
 </div>
 
 ---
