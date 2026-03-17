@@ -8,32 +8,40 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - uses: actions/checkout@v4
 
       - name: Write settings file into workspace
         run: |
           mkdir -p conf
-          cat > conf/settings.json << 'EOF'
+          cat > conf/settings.json << 'ENDJSON'
           {
-            "username": "chethandvg",
-            "type": "NORMAL",
+            "type": "rainbow",
+            "fileName": "profile-night-rainbow.svg",
+
             "backgroundColor": "#0d1117",
-            "foregroundColor": "#6C63FF",
-            "strongColor": "#9d4edd",
-            "weakColor": "#3a3a5c",
-            "radarColor": "#6C63FF",
-            "contribColors": [
-              "#1a1b27",
-              "#2d2b55",
-              "#4a3f8c",
-              "#6C63FF",
-              "#9d8fff"
-            ]
+            "foregroundColor": "#e2d9f3",
+            "strongColor": "#c084fc",
+            "weakColor": "#1e1b4b",
+            "radarColor": "#818cf8",
+
+            "growingAnimation": true,
+
+            "saturation": "85%",
+            "contribLightness": ["8%", "25%", "40%", "55%", "72%"],
+            "duration": "8s",
+            "hueRatio": -5,
+
+            "l10n": {
+              "commit":  "Commits",
+              "repo":    "Repos",
+              "review":  "Reviews",
+              "pullreq": "PRs",
+              "issue":   "Issues",
+              "contrib": "Contributions"
+            }
           }
-          EOF
+          ENDJSON
 
       - name: Generate 3D profile
         uses: yoshi389111/github-profile-3d-contrib@0.7.1
