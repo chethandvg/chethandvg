@@ -14,15 +14,15 @@ jobs:
       - name: Write settings file into workspace
         run: |
           mkdir -p conf
-          cat > conf/settings.json << 'EOF'
-          {
-            "username": "chethandvg",
-            "type": "NORMAL",
-            "backgroundColor1": "#0d1117",
-            "backgroundColor2": "#1a1b27",
-            "foregroundColor": "#6C63FF"
-          }
-          EOF
+          printf '%s\n' '{' \
+            '  "username": "chethandvg",' \
+            '  "type": "NORMAL",' \
+            '  "backgroundColor1": "#0d1117",' \
+            '  "backgroundColor2": "#1a1b27",' \
+            '  "foregroundColor": "#6C63FF"' \
+            '}' > conf/settings.json
+          echo "Settings file written:"
+          cat conf/settings.json
 
       - name: Generate 3D profile
         uses: yoshi389111/github-profile-3d-contrib@0.7.1
@@ -36,5 +36,3 @@ jobs:
         with:
           add: "profile-3d-contrib"
           message: "Update 3D contribution graph"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
