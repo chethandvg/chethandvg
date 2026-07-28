@@ -64,8 +64,6 @@ jobs:
           plugin_topics_limit: 15
           plugin_stars: yes
           plugin_stars_limit: 3
-          plugin_habits: yes
-          plugin_habits_facts: yes
           plugin_calendar: yes
-          plugin_achievements: yes
+          plugins_errors_fatal: yes
           filename: github-metrics.svg
