@@ -116,7 +116,7 @@
 
 <!-- GitHub Metrics (via lowlighter/metrics) — update via GitHub Action below -->
 <div align="center">
-  <img src="https://raw.githubusercontent.com/chethandvg/chethandvg/main/github-metrics.svg" alt="GitHub Metrics" width="95%" />
+  <img src="https://raw.githubusercontent.com/chethandvg/chethandvg/metrics-renders/github-metrics.svg" alt="GitHub Metrics" width="95%" />
 </div>
 
 ---
@@ -188,7 +188,7 @@ Other        █░░░░░░░░░░░░░░░░░░░░░�
 ## 🌐 3D Contribution Globe
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/chethandvg/chethandvg/main/profile-3d-contrib/profile-night-rainbow.svg" alt="3D Contribution Globe" width="95%" />
+  <img src="https://raw.githubusercontent.com/chethandvg/chethandvg/profile-3d-contrib/profile-night-rainbow.svg" alt="3D Contribution Globe" width="95%" />
 </div>
 
 ---

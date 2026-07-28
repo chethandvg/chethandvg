@@ -2,19 +2,59 @@ name: Generate GitHub Metrics
 
 on:
   schedule:
-    - cron: "0 4 * * *"   # runs daily at 4am UTC
+    - cron: "0 4 * * *" # runs daily at 4am UTC
   workflow_dispatch:
+
+concurrency:
+  group: generate-github-metrics
+  cancel-in-progress: true
 
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
-    permissions: 
-      contents: write 
+    timeout-minutes: 30
+    permissions:
+      contents: write
     steps:
+      - name: Validate Metrics token
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.METRICS_TOKEN }}
+        run: |
+          if [[ -z "${GH_TOKEN}" ]]; then
+            echo "::error::METRICS_TOKEN is not configured."
+            exit 1
+          fi
+
+          if ! gh api user --silent; then
+            echo "::error::METRICS_TOKEN is invalid or expired. Replace it with a valid GitHub personal access token."
+            exit 1
+          fi
+
+      - name: Ensure Metrics output branch exists
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OUTPUT_BRANCH: metrics-renders
+        run: |
+          if gh api "repos/${GITHUB_REPOSITORY}/git/ref/heads/${OUTPUT_BRANCH}" --silent 2>/dev/null; then
+            exit 0
+          fi
+
+          echo "Creating ${OUTPUT_BRANCH} from ${GITHUB_SHA}."
+          gh api --method POST "repos/${GITHUB_REPOSITORY}/git/refs" \
+            -f ref="refs/heads/${OUTPUT_BRANCH}" \
+            -f sha="${GITHUB_SHA}" \
+            --silent
+
       - name: Generate metrics
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
+          committer_token: ${{ secrets.GITHUB_TOKEN }}
+          committer_branch: metrics-renders
+          committer_message: "chore: update GitHub metrics [skip ci]"
+          output_action: commit
           user: chethandvg
           template: classic
           base: header, activity, community, repositories
@@ -24,9 +64,6 @@ jobs:
           plugin_topics_limit: 15
           plugin_stars: yes
           plugin_stars_limit: 3
-          plugin_habits: yes
-          plugin_habits_facts: yes
           plugin_calendar: yes
-          plugin_achievements: yes
+          plugins_errors_fatal: yes
           filename: github-metrics.svg
-          committer_branch: main

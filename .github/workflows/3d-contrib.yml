@@ -2,17 +2,22 @@ name: Generate 3D Contribution Graph
 
 on:
   schedule:
-    - cron: "0 2 * * *"   # daily at 2am UTC
+    - cron: "0 2 * * *" # daily at 2am UTC
   workflow_dispatch:
 
+concurrency:
+  group: generate-3d-contribution-graph
+  cancel-in-progress: true
+
 permissions:
-  contents: write 
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Write settings file into workspace
         run: |
@@ -47,14 +52,19 @@ jobs:
           ENDJSON
 
       - name: Generate 3D profile
-        uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        uses: yoshi389111/github-profile-3d-contrib@v0.9.3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: chethandvg
           SETTING_JSON: conf/settings.json
 
-      - name: Commit and push
-        uses: EndBug/add-and-commit@v9
+      - name: Publish generated assets
+        uses: crazy-max/ghaction-github-pages@v5
         with:
-          add: "profile-3d-contrib"
-          message: "Update 3D contribution graph"
+          target_branch: profile-3d-contrib
+          build_dir: profile-3d-contrib
+          commit_message: "chore: update 3D contribution graph"
+          allow_empty_commit: false
+          jekyll: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
