@@ -99,4 +99,34 @@ def accent_gradient(t: dict, gid: str = "accent", vertical: bool = False) -> str
     )
 
 
-REDUCED_MOTION = "@media (prefers-reduced-motion: reduce){*{animation:none!important}}"
+def _rgb(h: str) -> tuple[int, int, int]:
+    h = h.lstrip("#")
+    return int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16)
+
+
+def mix(a: str, b: str, k: float) -> str:
+    """Blend hex colour a toward b by k (0..1)."""
+    ra, rb = _rgb(a), _rgb(b)
+    return "#" + "".join(f"{round(x + (y - x) * k):02X}" for x, y in zip(ra, rb))
+
+
+def shade(c: str, k: float) -> str:
+    return mix(c, "#000000", k)
+
+
+def contrib_ramp(t: dict) -> list[str]:
+    """Five contribution levels (none → busiest), violet rising into cyan.
+
+    Shared by every contribution visual so colour always means "how much".
+    """
+    peak = mix(t["accent_b"], "#FFFFFF", 0.35) if t is THEMES["dark"] else shade(t["accent_b"], 0.15)
+    return [
+        t["empty_cell"],
+        mix(t["empty_cell"], t["accent_a"], 0.45),
+        t["accent_a"],
+        mix(t["accent_a"], t["accent_b"], 0.6),
+        peak,
+    ]
+
+
+REDUCED_MOTION ="@media (prefers-reduced-motion: reduce){*{animation:none!important}}"

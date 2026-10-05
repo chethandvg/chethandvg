@@ -105,15 +105,14 @@ I'm a software engineer who likes turning complex problems into simple, fast sys
 </picture>
 
 <picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chethandvg/chethandvg/profile-stats/landscape-dark.svg" />
+  <img src="https://raw.githubusercontent.com/chethandvg/chethandvg/profile-stats/landscape-light.svg" alt="3D contribution graph" width="100%" />
+</picture>
+
+<picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chethandvg/chethandvg/profile-stats/languages-dark.svg" />
   <img src="https://raw.githubusercontent.com/chethandvg/chethandvg/profile-stats/languages-light.svg" alt="Most used languages" width="100%" />
 </picture>
-
-<details>
-  <summary><b>3D contribution graph</b></summary>
-  <br/>
-  <img src="https://raw.githubusercontent.com/chethandvg/chethandvg/profile-3d-contrib/profile-night-rainbow.svg" alt="3D contribution graph" width="100%" />
-</details>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chethandvg/chethandvg/output/github-contribution-grid-snake-dark.svg" />

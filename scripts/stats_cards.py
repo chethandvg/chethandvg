@@ -14,7 +14,7 @@ from collections import defaultdict
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
-from theme import MONO, REDUCED_MOTION, SANS, THEMES, accent_gradient, esc
+from theme import MONO, REDUCED_MOTION, SANS, THEMES, accent_gradient, contrib_ramp, esc, shade
 
 # Languages that distort the picture (notebook output, generated scripts, …).
 HIDE_LANGS = {"Jupyter Notebook", "PowerShell", "Dockerfile", "Makefile", "Batchfile"}
@@ -274,6 +274,133 @@ def languages_card(s: dict, t: dict) -> str:
 '''
 
 
+def landscape_card(s: dict, t: dict) -> str:
+    """Isometric 3D contribution graph: height and colour both scale with daily work."""
+    W, H = 1200, 640
+    ramp = contrib_ramp(t)
+    dark = t is THEMES["dark"]
+
+    # Last 53 weeks, Sunday-aligned like GitHub's calendar.
+    end = date.today()
+    start = end - timedelta(days=(end.weekday() + 1) % 7) - timedelta(weeks=52)
+    cells = []
+    d = start
+    while d <= end:
+        off = (d - start).days
+        cells.append((off // 7, off % 7, d, s["days"].get(d.isoformat(), 0)))
+        d += timedelta(days=1)
+
+    counts = sorted(c for *_, c in cells if c)
+    peak = counts[-1] if counts else 1
+    q = [counts[int(len(counts) * p)] for p in (0.25, 0.5, 0.75)] if counts else [1, 1, 1]
+
+    def level(c):
+        if not c:
+            return 0
+        return 1 if c <= q[0] else 2 if c <= q[1] else 3 if c <= q[2] else 4
+
+    ox, oy, wv, dv, gap, max_h = 170, 236, (17, 5.5), (-9, 8), 0.1, 124
+
+    def P(w, dd, h=0.0):
+        return ox + w * wv[0] + dd * dv[0], oy + w * wv[1] + dd * dv[1] - h
+
+    def poly(pts, fill):
+        return f'<path d="M{"L".join(f"{x:.1f} {y:.1f}" for x, y in pts)}Z" fill="{fill}"/>'
+
+    weeks: dict[int, list[str]] = defaultdict(list)
+    for w, dd, _, c in cells:  # week-major order is a valid painter's order here
+        a, b = (w + gap, dd + gap), (w + 1 - gap, dd + gap)
+        cc, e = (w + 1 - gap, dd + 1 - gap), (w + gap, dd + 1 - gap)
+        if not c:
+            weeks[w].append(poly([P(*a), P(*b), P(*cc), P(*e)], ramp[0]))
+            continue
+        h = 3 + (max_h - 3) * (c / peak) ** 0.5
+        top = ramp[level(c)]
+        weeks[w].append(
+            poly([P(*e), P(*cc), P(*cc, h), P(*e, h)], shade(top, 0.22 if dark else 0.12))
+            + poly([P(*b), P(*cc), P(*cc, h), P(*b, h)], shade(top, 0.4 if dark else 0.24))
+            + poly([P(*a, h), P(*b, h), P(*cc, h), P(*e, h)], top)
+        )
+    bars = "".join(
+        f'<g class="wk" style="animation-delay:{w * 0.018:.3f}s">{"".join(parts)}</g>'
+        for w, parts in sorted(weeks.items())
+    )
+
+    months, prev = [], None
+    for w, dd, day, _ in cells:
+        if dd == 0 and day.month != prev:
+            if prev is not None:
+                x, y = P(w + 0.5, 7.9)
+                months.append(f'<text x="{x:.0f}" y="{y + 12:.0f}" text-anchor="middle" class="mono" '
+                              f'font-size="11" fill="{t["faint"]}">{day.strftime("%b")}</text>')
+            prev = day.month
+    weekdays = "".join(
+        f'<text x="{P(0, i + 0.5)[0] - 26:.0f}" y="{P(0, i + 0.5)[1] + 4:.0f}" text-anchor="end" class="mono" '
+        f'font-size="10.5" fill="{t["faint"]}">{name}</text>'
+        for i, name in ((1, "Mon"), (3, "Wed"), (5, "Fri"))
+    )
+
+    # Insights the other cards don't already show.
+    by_day = max(cells, key=lambda x: x[3])
+    by_wd, by_month = defaultdict(int), defaultdict(int)
+    for _, dd, day, c in cells:
+        by_wd[day.strftime("%A")] += c
+        by_month[day.strftime("%b %Y")] += c
+    top_wd = max(by_wd, key=by_wd.get)
+    top_month = max(by_month, key=by_month.get)
+    active = sum(1 for *_, c in cells if c)
+    insights = [
+        ("Best day", f"{by_day[3]}", by_day[2].strftime("%b %d, %Y")),
+        ("Busiest month", top_month, f"{by_month[top_month]:,} contributions"),
+        ("Favourite weekday", top_wd, f"{by_wd[top_wd]:,} contributions"),
+        ("Active days", f"{active}", f"of {len(cells)} · {active / len(cells):.0%}"),
+    ]
+    info = []
+    for i, (label, value, sub) in enumerate(insights):
+        x, y = 780 + (i % 2) * 200, 64 + (i // 2) * 84
+        info.append(
+            f'<g class="fade" style="animation-delay:{0.2 + i * 0.08:.2f}s">'
+            f'<text x="{x}" y="{y}" class="mono" font-size="11" letter-spacing="1" fill="{t["faint"]}">{esc(label.upper())}</text>'
+            f'<text x="{x}" y="{y + 28}" class="sans" font-size="22" font-weight="700" fill="{t["text"]}">{esc(value)}</text>'
+            f'<text x="{x}" y="{y + 48}" class="mono" font-size="11.5" fill="{t["muted"]}">{esc(sub)}</text></g>'
+        )
+
+    legend = "".join(
+        f'<rect x="{82 + i * 22}" y="{H - 52}" width="16" height="16" rx="4" fill="{c}"/>' for i, c in enumerate(ramp)
+    )
+
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="3D contribution graph">
+<title>3D contribution graph: {s["year_total"]} contributions in the last year</title>
+<defs>
+  <radialGradient id="glow" cx=".55" cy=".7" r=".7"><stop offset="0" stop-color="{t["accent_a"]}" stop-opacity="{t["orb_opacity"] * 0.3}"/><stop offset="1" stop-color="{t["accent_a"]}" stop-opacity="0"/></radialGradient>
+  <clipPath id="c"><rect width="{W}" height="{H}" rx="20"/></clipPath>
+  <style>
+    .sans{{font-family:{SANS}}} .mono{{font-family:{MONO}}}
+    .wk{{animation:rise .9s cubic-bezier(.2,.7,.2,1) backwards}}
+    @keyframes rise{{from{{opacity:0;transform:translateY(26px)}}}}
+    .fade{{animation:fade .6s ease-out backwards}}
+    @keyframes fade{{from{{opacity:0}}}}
+    {REDUCED_MOTION}
+  </style>
+</defs>
+<g clip-path="url(#c)">
+  <rect width="{W}" height="{H}" fill="{t["panel"]}"/>
+  <rect width="{W}" height="{H}" fill="url(#glow)"/>
+</g>
+<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="20" fill="none" stroke="{t["border"]}"/>
+<text x="40" y="56" class="mono" font-size="12" letter-spacing="1.4" fill="{t["accent_b"]}">CONTRIBUTION LANDSCAPE · LAST 12 MONTHS</text>
+<text x="40" y="82" class="sans" font-size="14" fill="{t["muted"]}">Each bar is one day. Height and colour grow with the work done.</text>
+{"".join(info)}
+{weekdays}
+{bars}
+{"".join(months)}
+<text x="40" y="{H - 39}" class="mono" font-size="11.5" fill="{t["faint"]}">Less</text>
+{legend}
+<text x="{82 + 5 * 22 + 4}" y="{H - 39}" class="mono" font-size="11.5" fill="{t["faint"]}">More<tspan dx="18">· peak {peak}/day · height ∝ √contributions</tspan></text>
+</svg>
+'''
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--user", default="chethandvg")
@@ -287,6 +414,7 @@ def main():
     for mode, t in THEMES.items():
         (out / f"overview-{mode}.svg").write_text(overview_card(s, t), encoding="utf-8")
         (out / f"languages-{mode}.svg").write_text(languages_card(s, t), encoding="utf-8")
+        (out / f"landscape-{mode}.svg").write_text(landscape_card(s, t), encoding="utf-8")
     cur, lon = streaks(s["days"])
     print(f"{s['year_total']} contributions, streak {cur}/{lon}, {len(s['langs'])} languages -> {out}")
 

@@ -43,7 +43,7 @@ PROJECTS = [
         "desc": "First C# implementation of the STOC 2025 algorithm that breaks "
                 "Dijkstra's 50-year sorting barrier. 49× fewer heap operations, "
                 "97 tests.",
-        "lang": ("C#", "#178600"),
+        "lang": ("C#", "#7355DD"),
         "tags": ".NET · Graphs · STOC '25",
     },
     {
@@ -53,7 +53,7 @@ PROJECTS = [
         "badge": "NuGet",
         "desc": "Modern, async, AOT-friendly .NET client for the Ollama REST API, "
                 "with streaming, tool calling, embeddings and OpenTelemetry.",
-        "lang": ("C#", "#178600"),
+        "lang": ("C#", "#7355DD"),
         "tags": ".NET 8–10 · AOT · LLMs",
     },
     {
@@ -63,7 +63,7 @@ PROJECTS = [
         "badge": "HLS",
         "desc": "Live video streaming with Blazor WebAssembly, SignalR chat, a custom "
                 "FFmpeg → HLS pipeline and Azure Front Door for global delivery.",
-        "lang": ("C#", "#178600"),
+        "lang": ("C#", "#7355DD"),
         "tags": "Blazor · SignalR · Azure",
     },
     {
@@ -73,7 +73,7 @@ PROJECTS = [
         "badge": "App",
         "desc": "An app that helps house owners manage their tenants' data in one "
                 "place: simple, fast and built end-to-end on C# and .NET.",
-        "lang": ("C#", "#178600"),
+        "lang": ("C#", "#7355DD"),
         "tags": ".NET · Full-stack",
     },
 ]
