@@ -30,7 +30,10 @@ jobs:
                 "hero": {
                   "name": "Chethan D V",
                   "status": "open to remote opportunities · Berlin, DE",
-                  "chips": ["C# / .NET", "Blazor", "Azure", "Python", "ML / LLMs"]
+                  "chips": ["C# / .NET", "Blazor", "Azure", "Python", "ML / LLMs"],
+                  "codeLanguage": "csharp",
+                  "codeFile": "Program.cs",
+                  "code": "var me = new Engineer\n{\n    Name   = \"Chethan D V\",\n    Base   = \"Berlin, DE\",\n    Stack  = [\".NET\", \"Azure\", \"AI\"],\n    Focus  = \"Scalable systems\",\n    Remote = true,\n};\nawait me.ShipAsync();"
                 },
                 "stack": {
                   "icons": ["csharp", "dotnet", "blazor", "python", "javascript", "azure", "azuredevops", "databricks", "apachespark", "docker", "postgresql", "mysql", "githubactions", "git"],
