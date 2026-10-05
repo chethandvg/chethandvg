@@ -47,6 +47,15 @@ query($login: String!, $cursor: String) {
       totalIssueContributions
       totalPullRequestReviewContributions
       contributionCalendar { totalContributions }
+      commitContributionsByRepository(maxRepositories: 100) {
+        contributions { totalCount }
+        repository {
+          name
+          languages(first: 12, orderBy: {field: SIZE, direction: DESC}) {
+            edges { size node { name color } }
+          }
+        }
+      }
     }
     repositories(first: 100, after: $cursor, ownerAffiliations: OWNER, isFork: false) {
       totalCount
@@ -95,16 +104,19 @@ def fetch(token: str, login: str) -> dict:
                 days[d["date"]] = d["contributionCount"]
         start = end
 
-    langs: dict[str, list] = defaultdict(lambda: [0, "#888888"])
-    for r in repos:
-        for e in r["languages"]["edges"]:
-            name = e["node"]["name"]
-            if name in HIDE_LANGS:
-                continue
-            langs[name][0] += e["size"]
-            langs[name][1] = e["node"]["color"] or "#888888"
-
+    # Languages weighted by my commits per repo over the last year, so the card
+    # reflects what I actually work on rather than bytes sitting in repos
+    # (vendored libraries, notebooks). This profile repo itself is excluded.
     cc = first["contributionsCollection"]
+    langs: dict[str, list] = defaultdict(lambda: [0.0, "#888888"])
+    committed = [r for r in cc["commitContributionsByRepository"] if r["repository"]["name"] != login]
+    for r in committed:
+        edges = [e for e in r["repository"]["languages"]["edges"] if e["node"]["name"] not in HIDE_LANGS]
+        total = sum(e["size"] for e in edges) or 1
+        for e in edges:
+            langs[e["node"]["name"]][0] += r["contributions"]["totalCount"] * e["size"] / total
+            langs[e["node"]["name"]][1] = e["node"]["color"] or "#888888"
+
     return {
         "days": dict(sorted(days.items())),
         "year_total": cc["contributionCalendar"]["totalContributions"],
@@ -112,9 +124,11 @@ def fetch(token: str, login: str) -> dict:
         "prs": cc["totalPullRequestContributions"],
         "issues": cc["totalIssueContributions"],
         "reviews": cc["totalPullRequestReviewContributions"],
-        "repos": first["repositories"]["totalCount"],
+        "repos": sum(1 for r in repos if not r["isPrivate"]),
+        "lang_repos": len(committed),
         "stars": sum(r["stargazerCount"] for r in repos if not r["isPrivate"]),
         "followers": first["followers"]["totalCount"],
+        "created": first["createdAt"][:10],
         "langs": sorted(langs.items(), key=lambda kv: -kv[1][0]),
     }
 
@@ -167,12 +181,12 @@ def overview_card(s: dict, t: dict) -> str:
     first_label = datetime.fromisoformat(recent[0][0]).strftime("%b %Y") if recent else ""
 
     stats = [
-        ("Current streak", f"{current}", "days"),
-        ("Longest streak", f"{longest}", "days"),
+        ("Current streak", f"{current}", "day" if current == 1 else "days"),
+        ("Longest streak", f"{longest}", "day" if longest == 1 else "days"),
         ("Commits", fmt(s["commits"]), "this year"),
-        ("Pull requests", fmt(s["prs"]), "this year"),
-        ("Repositories", fmt(s["repos"]), "owned"),
-        ("Stars earned", fmt(s["stars"]), "public"),
+        ("All-time", fmt(sum(s["days"].values())), "total"),
+        ("Best week", fmt(peak), "in 7 days"),
+        ("On GitHub", f"{(date.today() - date.fromisoformat(s['created'])).days // 365}", "years"),
     ]
     tiles = []
     for i, (label, value, unit) in enumerate(stats):
@@ -265,8 +279,8 @@ def languages_card(s: dict, t: dict) -> str:
 </defs>
 <g clip-path="url(#c)"><rect width="{W}" height="{H}" fill="{t["panel"]}"/></g>
 <rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="20" fill="none" stroke="{t["border"]}"/>
-<text x="40" y="52" class="mono" font-size="12" letter-spacing="1.4" fill="{t["accent_b"]}">LANGUAGES · BY CODE VOLUME</text>
-<text x="{W - 40}" y="52" text-anchor="end" class="mono" font-size="12" fill="{t["faint"]}">across {s["repos"]} repositories</text>
+<text x="40" y="52" class="mono" font-size="12" letter-spacing="1.4" fill="{t["accent_b"]}">LANGUAGES · WEIGHTED BY MY COMMITS</text>
+<text x="{W - 40}" y="52" text-anchor="end" class="mono" font-size="12" fill="{t["faint"]}">last 12 months · {s["lang_repos"]} repositories</text>
 <rect x="{bar_x}" y="{bar_y}" width="{bar_w}" height="14" rx="7" fill="{t["empty_cell"]}"/>
 <g clip-path="url(#barClip)">{"".join(segs)}</g>
 {"".join(legend)}

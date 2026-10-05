@@ -88,7 +88,7 @@ I'm a software engineer who likes turning complex problems into simple, fast sys
 ### Stack
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=cs,dotnet,python,js,html,css,azure,docker,postgres,mysql,githubactions,git,visualstudio,vscode&theme=dark&perline=15" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=cs%2Cdotnet%2Cpython%2Cjs%2Chtml%2Ccss%2Cazure%2Cdocker%2Cpostgres%2Cmysql%2Cgithubactions%2Cgit%2Cvisualstudio%2Cvscode&theme=dark&perline=15" />
   <img src="https://skillicons.dev/icons?i=cs,dotnet,python,js,html,css,azure,docker,postgres,mysql,githubactions,git,visualstudio,vscode&theme=light&perline=15" alt="C#, .NET, Python, JavaScript, HTML, CSS, Azure, Docker, PostgreSQL, MySQL, GitHub Actions, Git, Visual Studio, VS Code" width="100%" />
 </picture>
 
