@@ -1,0 +1,47 @@
+name: Generate Profile Stats
+
+on:
+  schedule:
+    - cron: "0 3 * * *" # daily at 3am UTC
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - ".github/workflows/profile-stats.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: generate-profile-stats
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      # METRICS_TOKEN (a PAT) includes private contributions; falls back to the
+      # workflow token, which only sees public activity.
+      - name: Render stats cards
+        env:
+          GH_TOKEN: ${{ secrets.METRICS_TOKEN || secrets.GITHUB_TOKEN }}
+        run: python scripts/stats_cards.py --user chethandvg --out dist
+
+      - name: Publish to profile-stats branch
+        uses: crazy-max/ghaction-github-pages@v5
+        with:
+          target_branch: profile-stats
+          build_dir: dist
+          commit_message: "chore: update profile stats"
+          allow_empty_commit: false
+          jekyll: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
