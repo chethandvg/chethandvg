@@ -1,27 +1,34 @@
 <!--
   Chethan D V · GitHub profile
-  Static art:  python scripts/static_assets.py   → assets/
-  Live stats:  .github/workflows/profile-stats.yml → profile-stats branch (daily)
+  Cards are rendered daily by Profilescape (https://github.com/chethandvg/profilescape)
+  via .github/workflows/profilescape.yml and published to the profilescape-output branch.
 -->
 
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg" />
-    <img src="assets/hero-light.svg" alt="Chethan D V — Software Engineer · Full-Stack · Applied AI" width="100%" />
-  </picture>
-
-  <br/>
-
-  <a href="https://www.linkedin.com/in/chethan-d-v-aa4a55174/"><img src="https://img.shields.io/badge/LinkedIn-connect-0A66C2?style=flat-square&logo=linkedin&logoColor=white&labelColor=0B0D14" alt="LinkedIn" /></a>
-  <a href="mailto:chethandvg3@gmail.com"><img src="https://img.shields.io/badge/Email-say%20hi-8B7CFF?style=flat-square&logo=gmail&logoColor=white&labelColor=0B0D14" alt="Email" /></a>
-  <img src="https://img.shields.io/badge/Based%20in-Berlin-3EC6E0?style=flat-square&logo=googlemaps&logoColor=white&labelColor=0B0D14" alt="Berlin" />
-  <img src="https://img.shields.io/badge/Open%20to-remote-3FB950?style=flat-square&logo=rocket&logoColor=white&labelColor=0B0D14" alt="Open to remote" />
-</div>
-
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/divider-dark.svg" />
-  <img src="assets/divider-light.svg" alt="" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chethandvg/chethandvg/profilescape-output/hero-dark.svg" />
+  <img src="https://raw.githubusercontent.com/chethandvg/chethandvg/profilescape-output/hero-light.svg" alt="Chethan D V: Software Engineer · .NET · Azure · Applied AI" width="100%" />
 </picture>
+
+<p align="center">
+  <a href="https://github.com/chethandvg">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chethandvg/chethandvg/profilescape-output/social-github-dark.svg" />
+    <img src="https://raw.githubusercontent.com/chethandvg/chethandvg/profilescape-output/social-github-light.svg" alt="GitHub" />
+  </picture>
+  </a>
+  <a href="https://www.linkedin.com/in/chethan-d-v-aa4a55174/">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chethandvg/chethandvg/profilescape-output/social-linkedin-dark.svg" />
+    <img src="https://raw.githubusercontent.com/chethandvg/chethandvg/profilescape-output/social-linkedin-light.svg" alt="LinkedIn" />
+  </picture>
+  </a>
+  <a href="mailto:chethandvg3@gmail.com">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chethandvg/chethandvg/profilescape-output/social-email-dark.svg" />
+    <img src="https://raw.githubusercontent.com/chethandvg/chethandvg/profilescape-output/social-email-light.svg" alt="Email" />
+  </picture>
+  </a>
+</p>
 
 ### About
 
@@ -49,37 +56,37 @@ I'm a software engineer who likes turning complex problems into simple, fast sys
 <table>
   <tr>
     <td width="50%">
-      <a href="https://github.com/chethandvg/breaking-the-sorting-barrier">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="assets/project-sorting-barrier-dark.svg" />
-          <img src="assets/project-sorting-barrier-light.svg" alt="Breaking the Sorting Barrier" width="100%" />
-        </picture>
+      <a href="https://github.com/chethandvg/profilescape">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chethandvg/chethandvg/profilescape-output/repo-chethandvg-profilescape-dark.svg" />
+        <img src="https://raw.githubusercontent.com/chethandvg/chethandvg/profilescape-output/repo-chethandvg-profilescape-light.svg" alt="Profilescape" width="100%" />
+      </picture>
       </a>
     </td>
     <td width="50%">
-      <a href="https://github.com/chethandvg/Ollama.Net">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="assets/project-ollama-net-dark.svg" />
-          <img src="assets/project-ollama-net-light.svg" alt="Ollama.Net" width="100%" />
-        </picture>
+      <a href="https://github.com/chethandvg/breaking-the-sorting-barrier">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chethandvg/chethandvg/profilescape-output/repo-chethandvg-breaking-the-sorting-barrier-dark.svg" />
+        <img src="https://raw.githubusercontent.com/chethandvg/chethandvg/profilescape-output/repo-chethandvg-breaking-the-sorting-barrier-light.svg" alt="Breaking the Sorting Barrier" width="100%" />
+      </picture>
       </a>
     </td>
   </tr>
   <tr>
     <td width="50%">
-      <a href="https://github.com/chethandvg/LiveStreamApp">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="assets/project-livestream-dark.svg" />
-          <img src="assets/project-livestream-light.svg" alt="LiveStream App" width="100%" />
-        </picture>
+      <a href="https://github.com/chethandvg/Ollama.Net">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chethandvg/chethandvg/profilescape-output/repo-chethandvg-ollama-net-dark.svg" />
+        <img src="https://raw.githubusercontent.com/chethandvg/chethandvg/profilescape-output/repo-chethandvg-ollama-net-light.svg" alt="Ollama.Net" width="100%" />
+      </picture>
       </a>
     </td>
     <td width="50%">
-      <a href="https://github.com/chethandvg/tenant-management">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="assets/project-tenant-management-dark.svg" />
-          <img src="assets/project-tenant-management-light.svg" alt="Tenant Management" width="100%" />
-        </picture>
+      <a href="https://github.com/chethandvg/LiveStreamApp">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chethandvg/chethandvg/profilescape-output/repo-chethandvg-livestreamapp-dark.svg" />
+        <img src="https://raw.githubusercontent.com/chethandvg/chethandvg/profilescape-output/repo-chethandvg-livestreamapp-light.svg" alt="LiveStream App" width="100%" />
+      </picture>
       </a>
     </td>
   </tr>
@@ -88,35 +95,25 @@ I'm a software engineer who likes turning complex problems into simple, fast sys
 ### Stack
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=cs%2Cdotnet%2Cpython%2Cjs%2Chtml%2Ccss%2Cazure%2Cdocker%2Cpostgres%2Cmysql%2Cgithubactions%2Cgit%2Cvisualstudio%2Cvscode&theme=dark&perline=15" />
-  <img src="https://skillicons.dev/icons?i=cs,dotnet,python,js,html,css,azure,docker,postgres,mysql,githubactions,git,visualstudio,vscode&theme=light&perline=15" alt="C#, .NET, Python, JavaScript, HTML, CSS, Azure, Docker, PostgreSQL, MySQL, GitHub Actions, Git, Visual Studio, VS Code" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chethandvg/chethandvg/profilescape-output/stack-dark.svg" />
+  <img src="https://raw.githubusercontent.com/chethandvg/chethandvg/profilescape-output/stack-light.svg" alt="Tech stack: C#, .NET, Blazor, Python, JavaScript, Azure, Azure DevOps, Databricks, Apache Spark, Docker, PostgreSQL, MySQL, GitHub Actions, Git" width="100%" />
 </picture>
-
-<sub>
-  <b>Also:</b>
-  Blazor · ASP.NET MVC · .NET MAUI · Entity Framework · Azure Databricks · PySpark · Azure DevOps · Contentful · commercetools · Algolia · SignalR · FFmpeg
-</sub>
 
 ### Activity
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chethandvg/chethandvg/profile-stats/overview-dark.svg" />
-  <img src="https://raw.githubusercontent.com/chethandvg/chethandvg/profile-stats/overview-light.svg" alt="GitHub activity overview" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chethandvg/chethandvg/profilescape-output/stats-dark.svg" />
+  <img src="https://raw.githubusercontent.com/chethandvg/chethandvg/profilescape-output/stats-light.svg" alt="GitHub activity overview" width="100%" />
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chethandvg/chethandvg/profile-stats/landscape-dark.svg" />
-  <img src="https://raw.githubusercontent.com/chethandvg/chethandvg/profile-stats/landscape-light.svg" alt="3D contribution graph" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chethandvg/chethandvg/profilescape-output/3d-dark.svg" />
+  <img src="https://raw.githubusercontent.com/chethandvg/chethandvg/profilescape-output/3d-light.svg" alt="3D contribution graph of the last 12 months" width="100%" />
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chethandvg/chethandvg/profile-stats/languages-dark.svg" />
-  <img src="https://raw.githubusercontent.com/chethandvg/chethandvg/profile-stats/languages-light.svg" alt="Most used languages" width="100%" />
-</picture>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chethandvg/chethandvg/output/github-contribution-grid-snake-dark.svg" />
-  <img src="https://raw.githubusercontent.com/chethandvg/chethandvg/output/github-contribution-grid-snake.svg" alt="Contribution snake" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chethandvg/chethandvg/profilescape-output/languages-dark.svg" />
+  <img src="https://raw.githubusercontent.com/chethandvg/chethandvg/profilescape-output/languages-light.svg" alt="Most used languages, weighted by commits" width="100%" />
 </picture>
 
 ### Experience
@@ -131,11 +128,4 @@ highlights:
   - CI/CD with GitHub Actions and Azure DevOps
 ```
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/divider-dark.svg" />
-  <img src="assets/divider-light.svg" alt="" width="100%" />
-</picture>
-
-<div align="center">
-  <sub>Let's build something great together, <a href="https://www.linkedin.com/in/chethan-d-v-aa4a55174/">say hello on LinkedIn</a> or <a href="mailto:chethandvg3@gmail.com">by email</a>.</sub>
-</div>
+<p align="center"><sub>Cards built with <a href="https://github.com/chethandvg/profilescape">Profilescape</a>, refreshed daily.</sub></p>

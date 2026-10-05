@@ -1,0 +1,46 @@
+name: Profilescape
+
+on:
+  schedule:
+    - cron: "17 3 * * *" # daily at 03:17 UTC
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/profilescape.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profilescape
+  cancel-in-progress: true
+
+jobs:
+  cards:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: chethandvg/profilescape@v1
+        with:
+          cards: hero,socials,stats,3d,languages,repos,stack
+          repos: profilescape,breaking-the-sorting-barrier,Ollama.Net,LiveStreamApp
+          config: |
+            {
+              "options": {
+                "hero": {
+                  "name": "Chethan D V",
+                  "status": "open to remote opportunities · Berlin, DE",
+                  "chips": ["C# / .NET", "Blazor", "Azure", "Python", "ML / LLMs"]
+                },
+                "stack": {
+                  "icons": ["csharp", "dotnet", "blazor", "python", "javascript", "azure", "azuredevops", "databricks", "apachespark", "docker", "postgresql", "mysql", "githubactions", "git"],
+                  "perRow": 7
+                },
+                "socials": {
+                  "links": {
+                    "linkedin": "https://www.linkedin.com/in/chethan-d-v-aa4a55174/",
+                    "email": "chethandvg3@gmail.com"
+                  }
+                }
+              }
+            }
