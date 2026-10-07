@@ -116,6 +116,15 @@ I'm a software engineer who likes turning complex problems into simple, fast sys
   <img src="https://raw.githubusercontent.com/chethandvg/chethandvg/profilescape-output/languages-light.svg" alt="Most used languages, weighted by commits" width="100%" />
 </picture>
 
+### Contribution snake
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chethandvg/chethandvg/snake-output/snake-dark.svg" />
+  <img src="https://raw.githubusercontent.com/chethandvg/chethandvg/snake-output/snake-light.svg" alt="Animated snake eating its way through my GitHub contribution calendar of the last 12 months" width="100%" />
+</picture>
+
+<sub>🐍 A snake eats its way through my last 12 months on GitHub. Every dot is one day, and brighter dots mean busier days, on the same colour scale as the 3D graph above. Redrawn every 12 hours by <a href="https://github.com/Platane/snk">Platane/snk</a>.</sub>
+
 ### Experience
 
 ```yaml
