@@ -51,6 +51,12 @@ I'm a software engineer who likes turning complex problems into simple, fast sys
   </tr>
 </table>
 
+### Frequencies of Life
+
+An open series of small repositories that turn the rhythms of life, from calcium pulses in a fertilised egg to the first heartbeat, into **proved maths, tested code and sound**. Every claim says how it is known: proved in Lean 4, verified, tested, referenced by DOI, or stated as an assumption.
+
+**Read the series:** [chethandvg.github.io/frequencies-of-life](https://chethandvg.github.io/frequencies-of-life/) · **First repositories:** [rhythm-units](https://github.com/chethandvg/rhythm-units) · [pitch-math](https://github.com/chethandvg/pitch-math) · [evidence-kernel](https://github.com/chethandvg/evidence-kernel)
+
 ### Featured work
 
 <table>
